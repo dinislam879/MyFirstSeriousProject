@@ -917,7 +917,7 @@ async def next_keyboard(call: types.CallbackQuery):
 @dp.message_handler(commands=['sendalltext'])
 async def sendall(message: types.Message):
   if message.chat.type == 'private':
-    if message.from_user.id == 995995:
+    if message.from_user.id == айдиклинта:
       text = message.text[12:]
       users = SQLighter.s1.get_users()
       for row in users:
@@ -929,8 +929,8 @@ async def sendall(message: types.Message):
 @dp.message_handler(commands=['getstatic'])
 async def static(message: types.Message):
   if message.chat.type == 'private':
-    if message.from_user.id == 995995: 
-        await bot.send_message('995995',f'''📊Статистика:
+    if message.from_user.id == айди клинта: 
+        await bot.send_message('айди клинта',f'''📊Статистика:
 
 👤Кол-во пользователей: {len(SQLighter.s1.get_users())}''')
 @dp.message_handler(content_types=['text'])
@@ -942,7 +942,7 @@ async def profile(message: types.Message):
     if message.text == 'ℹ️ О нас':
         await bot.send_message(message.chat.id, config.configuration['about_us'], reply_markup=config.admin_inline, disable_web_page_preview=True)
     if message.text == '👤 Об авторе':
-        await bot.send_photo(message.chat.id, 'https://kg-portal.ru/authors/michelle.jpg')
+        await bot.send_photo(message.chat.id, '')
         await bot.send_message(message.chat.id, config.configuration['about_author'], disable_web_page_preview=True)
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
